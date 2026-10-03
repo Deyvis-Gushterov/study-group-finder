@@ -1,6 +1,11 @@
 import {
   collection,
   addDoc,
+  getDocs,
+  getDoc,
+  doc,
+  query,
+  orderBy,
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../firebase";
@@ -20,4 +25,16 @@ export async function createGroup(data, user) {
     createdAt: serverTimestamp(),
   });
   return docRef.id;
+}
+
+export async function getAllGroups() {
+  const q = query(groupsRef, orderBy("createdAt", "desc"));
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
+
+export async function getGroupById(id) {
+  const snapshot = await getDoc(doc(db, "groups", id));
+  if (!snapshot.exists()) return null;
+  return { id: snapshot.id, ...snapshot.data() };
 }
