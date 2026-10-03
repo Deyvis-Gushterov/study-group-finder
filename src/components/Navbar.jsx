@@ -20,6 +20,7 @@ function Navbar() {
       <Link to="/" className="navbar-brand">StudyGroupFinder</Link>
 
       <nav className="navbar-links">
+        <NavLink to="/groups/create">Create Group</NavLink>
         <NavLink to="/groups">Groups</NavLink>
 
         {isAuthenticated ? (

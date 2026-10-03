@@ -8,6 +8,7 @@ import Catalog from "./pages/Catalog";
 import Details from "./pages/Details";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import CreateGroup from "./pages/CreateGroup";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           </Route>
 
           <Route element={<PrivateRoute />}>
-            {/* Create / Edit / My Groups pages will go here */}
+            <Route path="/groups/create" element={<CreateGroup />} />
           </Route>
         </Routes>
       </BrowserRouter>
