@@ -1,0 +1,5 @@
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem; border-bottom: 1px solid #ddd; }
+.navbar-brand { font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.navbar-links { display: flex; align-items: center; gap: 1rem; }
+.navbar-links a.active { font-weight: 700; }
+.navbar-links button { cursor: pointer; padding: 0.4rem 0.8rem; }
