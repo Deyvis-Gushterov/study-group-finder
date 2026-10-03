@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute";
 import GuestRoute from "./components/GuestRoute";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Details from "./pages/Details";
@@ -12,6 +13,7 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/groups" element={<Catalog />} />
