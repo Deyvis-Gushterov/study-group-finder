@@ -6,3 +6,6 @@
 .group-meta { font-size: 0.85rem; opacity: 0.75; }
 .status-message { text-align: center; padding: 2rem; }
 .error-banner { background: #fdecea; color: #c0392b; padding: 0.6rem; border-radius: 4px; margin: 1rem; }
+.owner-actions { display: flex; gap: 0.6rem; margin: 1rem 0; }
+.btn { padding: 0.5rem 1rem; border: 1px solid #888; border-radius: 4px; text-decoration: none; cursor: pointer; background: transparent; color: inherit; font-size: 1rem; }
+.btn-danger { border-color: #c0392b; color: #c0392b; }
