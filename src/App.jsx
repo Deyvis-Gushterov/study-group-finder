@@ -9,6 +9,7 @@ import Details from "./pages/Details";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CreateGroup from "./pages/CreateGroup";
+import EditGroup from "./pages/EditGroup";
 
 function App() {
   return (
@@ -16,20 +17,23 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/groups" element={<Catalog />} />
+              <Route path="/" element={<Home />} />
+           <Route path="/groups" element={<Catalog />} />
           <Route path="/groups/:id" element={<Details />} />
+      
 
-          <Route element={<GuestRoute />}>
-            <Route path="/login" element={<Login />} />
+
+                 <Route element={<GuestRoute />}>
+              <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-          </Route>
+            </Route>
 
           <Route element={<PrivateRoute />}>
-            <Route path="/groups/create" element={<CreateGroup />} />
-          </Route>
+             <Route path="/groups/create" element={<CreateGroup />} />
+              <Route path="/groups/:id/edit" element={<EditGroup />} />
+           </Route>
         </Routes>
-      </BrowserRouter>
+          </BrowserRouter>
     </AuthProvider>
   );
 }

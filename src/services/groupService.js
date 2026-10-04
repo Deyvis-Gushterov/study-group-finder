@@ -4,6 +4,8 @@ import {
   getDocs,
   getDoc,
   doc,
+  updateDoc,
+  deleteDoc,
   query,
   orderBy,
   serverTimestamp,
@@ -37,4 +39,18 @@ export async function getGroupById(id) {
   const snapshot = await getDoc(doc(db, "groups", id));
   if (!snapshot.exists()) return null;
   return { id: snapshot.id, ...snapshot.data() };
+}
+
+export async function updateGroup(id, data) {
+  await updateDoc(doc(db, "groups", id), {
+    title: data.title.trim(),
+    subject: data.subject.trim(),
+    description: data.description.trim(),
+    location: data.location.trim(),
+    schedule: data.schedule.trim(),
+  });
+}
+
+export async function deleteGroup(id) {
+  await deleteDoc(doc(db, "groups", id));
 }
