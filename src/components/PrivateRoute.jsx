@@ -4,6 +4,8 @@ import { useAuth } from "../hooks/useAuth";
 export default function PrivateRoute() {
   const { isAuthenticated, loading } = useAuth();
 
+
   if (loading) return <p>Loading...</p>;
+  
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 }

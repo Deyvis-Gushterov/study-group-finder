@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { getAllGroups } from "../services/groupService";
 import GroupCard from "../components/GroupCard";
 import Spinner from "../components/Spinner";
+
 import ErrorMessage from "../components/ErrorMessage";
 import "../styles/groups.css";
+
 
 function Catalog() {
   const [groups, setGroups] = useState([]);
@@ -18,7 +20,9 @@ function Catalog() {
         const data = await getAllGroups();
         if (!cancelled) setGroups(data);
       } catch (err) {
+
         console.error(err);
+        
         if (!cancelled) setError("Could not load groups. Please try again later.");
       } finally {
         if (!cancelled) setLoading(false);
