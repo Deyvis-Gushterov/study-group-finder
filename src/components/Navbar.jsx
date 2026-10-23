@@ -15,16 +15,16 @@ function Navbar() {
     }
   };
 
-  return (
+    return (
     <header className="navbar">
       <Link to="/" className="navbar-brand">StudyGroupFinder</Link>
 
       <nav className="navbar-links">
-        <NavLink to="/groups/create">Create Group</NavLink>
         <NavLink to="/groups">Groups</NavLink>
 
         {isAuthenticated ? (
           <>
+            <NavLink to="/groups/create">Create Group</NavLink>
             <span className="navbar-user">Hi, {user.displayName || user.email}</span>
             <button onClick={handleLogout}>Logout</button>
           </>
