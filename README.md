@@ -2,7 +2,7 @@
 
 A single-page web application where students can create and discover study groups, join the ones that fit their schedule, and manage the groups they organize.
 
-**Live demo:** https://study-group-finder-three-zeta.vercel.appgit add README.md (Firebase backend, so no server warm-up is needed)
+**Live demo:** https://study-group-finder-three-zeta.vercel.app add README.md (Firebase backend, so no server warm-up is needed)
 **Repository:** https://github.com/Deyvis-Gushterov/study-group-finder
 
 ---
